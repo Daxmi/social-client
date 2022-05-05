@@ -15,12 +15,7 @@ const App = () => {
       fetch("https://social-login-react.herokuapp.com/auth/login/success", {
         method: "GET",
         credentials: "include",
-        mode: "cors",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
+       
       })
         .then((response) => {
           if (response.status === 200) return response.json();
