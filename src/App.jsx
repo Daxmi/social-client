@@ -14,11 +14,11 @@ const App = () => {
       fetch("https://social-login-react.herokuapp.com/auth/login/success", {
         method: "GET",
         credentials: "include",
+        mode: "cors",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
-          mode: "cors"
         },
       })
         .then((response) => {
