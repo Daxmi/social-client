@@ -12,32 +12,27 @@ const App = () => {
 
   useEffect(() => {
     const getUser = async () => {
-      // fetch("https://social-login-react.herokuapp.com/auth/login/success", {
-      //   method: "GET",
-      //   credentials: "include",
-      //   mode: "cors",
-      //   headers: {
-      //     Accept: "application/json",
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Credentials": true,
-      //   },
-      // })
-      //   .then((response) => {
-      //     if (response.status === 200) return response.json();
-      //     throw new Error("authentication has been failed!");
-      //   })
-      //   .then((resObject) => {
-      //     setUser(resObject.user);
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-      //   });
-     const res = await  axios.get("https://social-login-react.herokuapp.com/auth/login/success", { withCredentials: true });
-     if(res.status === 200) {
-       setUser(res.user)
-     } else {
-       console.log(res);
-     }
+      fetch("https://social-login-react.herokuapp.com/auth/login/success", {
+        method: "GET",
+        credentials: "include",
+        mode: "cors",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      })
+        .then((response) => {
+          if (response.status === 200) return response.json();
+          throw new Error("authentication has been failed!");
+        })
+        .then((resObject) => {
+          setUser(resObject.user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+   
     };
     getUser();
   }, []);
