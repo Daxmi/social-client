@@ -32,7 +32,7 @@ const App = () => {
       //   .catch((err) => {
       //     console.log(err);
       //   });
-      const res = await axios.get("http://localhost:5000/auth/login/success", { withCredentials: true });
+      const res = await axios.get("https://social-login-react.herokuapp.com/auth/login/success", { withCredentials: true });
       setUser(res.data.user);
     };
     getUser();
