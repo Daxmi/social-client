@@ -15,7 +15,7 @@ const App = () => {
         method: "GET",
         credentials: "include",
         headers: {
-          Accept: "application/json",
+          Accept: "text/plain",
           "Content-Type": 'text/plain',
           "Access-Control-Allow-Credentials": true,
         },
